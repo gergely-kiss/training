@@ -39,7 +39,8 @@ public class JpaConstants {
 
     public static final String TAG = "tag";
     public static final String COLOR = "color";
-
+    public static final String GREETING = "greeting";
+    public static final String ROLE = "role";
 
 
     private JpaConstants() {

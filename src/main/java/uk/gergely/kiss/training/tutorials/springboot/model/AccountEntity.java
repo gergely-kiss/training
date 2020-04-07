@@ -1,12 +1,10 @@
-package uk.gergely.kiss.training.tutorials.persistence.model;
+package uk.gergely.kiss.training.tutorials.springboot.model;
 
 import uk.gergely.kiss.training.data.JpaConstants;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.StringJoiner;
 
-@Entity
+@Entity(name = JpaConstants.ACCOUNT)
 public class AccountEntity {
 
     @Id
@@ -31,8 +29,6 @@ public class AccountEntity {
 
     @Column(name = JpaConstants.LOCKED, nullable = false)
     private Boolean locked;
-
-
 
     public AccountEntity() {
     }

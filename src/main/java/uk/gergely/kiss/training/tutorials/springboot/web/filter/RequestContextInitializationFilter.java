@@ -1,8 +1,8 @@
-package uk.gergely.kiss.training.tutorials.persistence.web.filter;
+package uk.gergely.kiss.training.tutorials.springboot.web.filter;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.GenericFilterBean;
-import uk.gergely.kiss.training.tutorials.persistence.util.RequestContext;
+import uk.gergely.kiss.training.tutorials.springboot.util.RequestContext;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;

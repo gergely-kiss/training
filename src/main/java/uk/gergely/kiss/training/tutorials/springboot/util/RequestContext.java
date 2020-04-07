@@ -1,4 +1,4 @@
-package uk.gergely.kiss.training.tutorials.persistence.util;
+package uk.gergely.kiss.training.tutorials.springboot.util;
 
 public class RequestContext {
 

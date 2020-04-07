@@ -1,10 +1,9 @@
-package uk.gergely.kiss.training.tutorials.persistence.model;
+package uk.gergely.kiss.training.tutorials.springboot.model;
 
 import uk.gergely.kiss.training.data.JpaConstants;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 import java.util.UUID;

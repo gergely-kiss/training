@@ -3,8 +3,15 @@ package uk.gergely.kiss.training;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import static springfox.documentation.builders.PathSelectors.regex;
+
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.caffeine.CaffeineCacheManager;
+import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.context.annotation.Bean;
 import com.google.common.base.Predicate;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -14,12 +21,20 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import uk.gergely.kiss.training.api.resources.ControllerConstants;
 
-@EnableSwagger2
+
 @SpringBootApplication
+@EnableSwagger2
+@EnableTransactionManagement
+@EnableCaching
 public class TrainingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TrainingApplication.class, args);
+	}
+
+	@Bean
+	public CacheManager cacheManager(){
+		return new CaffeineCacheManager("greetingEntitys");
 	}
 
 	@Bean
