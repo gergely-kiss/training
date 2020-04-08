@@ -14,6 +14,8 @@ public class ControllerConstants {
     public static final String PERSISTENCE_PATH="/persistence";
     public static final String TUTORIAL_PATH = "/tutorial";
     public static final String GREETING_PATH = "/greeting";
+    public static final String SEND_PATH = "/send";
     public static final String ACCOUNT_PATH="/account";
+
 
 }

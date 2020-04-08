@@ -11,6 +11,8 @@ import org.springframework.cache.caffeine.CaffeineCacheManager;
 import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.context.annotation.Bean;
 import com.google.common.base.Predicate;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -26,6 +28,8 @@ import uk.gergely.kiss.training.api.resources.ControllerConstants;
 @EnableSwagger2
 @EnableTransactionManagement
 @EnableCaching
+@EnableScheduling
+@EnableAsync
 public class TrainingApplication {
 
 	public static void main(String[] args) {
