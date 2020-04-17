@@ -1,7 +1,5 @@
 package uk.gergely.kiss.training.tutorials.springboot.web.restcontroller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -15,13 +13,14 @@ import uk.gergely.kiss.training.tutorials.springboot.service.GreetingService;
 import java.util.Collection;
 import java.util.concurrent.Future;
 
-@RestController
+
 @RequestMapping(ControllerConstants.API_ROOT +
         ControllerConstants.TUTORIAL_PATH +
         ControllerConstants.PERSISTENCE_PATH +
         ControllerConstants.GREETING_PATH)
-public class GreetingController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(GreetingController.class);
+@RestController
+public class GreetingController extends AbstractController{
+
     private final GreetingService greetingService;
     private final EmailService emailService;
 

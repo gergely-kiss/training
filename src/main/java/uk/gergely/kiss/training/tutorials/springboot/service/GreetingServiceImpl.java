@@ -19,6 +19,7 @@ import java.util.Collection;
 public class GreetingServiceImpl implements GreetingService {
 
     private static final Logger LOG = LoggerFactory.getLogger(GreetingServiceImpl.class);
+
     private final GreetingEntityRepository greetingEntityRepository;
 
     @Autowired
