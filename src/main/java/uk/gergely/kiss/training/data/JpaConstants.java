@@ -41,8 +41,14 @@ public class JpaConstants {
     public static final String COLOR = "color";
     public static final String GREETING = "greeting";
     public static final String ROLE = "role";
-
+    public static final String NODE = "node";
+    public static final String TREE_ID = "tree_id";
+    public static final String KEY = "key";
+    public static final String VALUE = "value";
+    public static final String LEFT_CHILD_ID = "left_child_id";
+    public static final String RIGHT_CHILD_ID = "right_child_id";
 
     private JpaConstants() {
     }
+
 }

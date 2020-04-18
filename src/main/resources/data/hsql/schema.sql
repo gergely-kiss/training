@@ -58,4 +58,19 @@ create table Account_Role
         foreign key (role_id) references Role (id)
 );
 
+drop table Node if exists;
+create table Node
+(
+    id BIGINT not null,
+    tree_id BIGINT,
+    key BIGINT not null,
+    value varchar(255) not null,
+    left_child_id BIGINT,
+    right_child_id BIGINT,
+    constraint Node_pk
+        primary key (id)
+);
+
+create user if not exists INTELIJ password 'XdR4fv66Oo0p' admin;
+
 

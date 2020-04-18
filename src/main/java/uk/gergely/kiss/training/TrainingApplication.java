@@ -9,6 +9,7 @@ import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.caffeine.CaffeineCacheManager;
 import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import com.google.common.base.Predicate;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -22,6 +23,7 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import uk.gergely.kiss.training.api.resources.ControllerConstants;
+import uk.gergely.kiss.training.tutorials.tree.BinaryTreeServiceTestBean;
 
 
 @SpringBootApplication
@@ -33,7 +35,8 @@ import uk.gergely.kiss.training.api.resources.ControllerConstants;
 public class TrainingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TrainingApplication.class, args);
+		ConfigurableApplicationContext context = SpringApplication.run(TrainingApplication.class, args);
+		context.getBean(BinaryTreeServiceTestBean.class).test();
 	}
 
 	@Bean
