@@ -2,7 +2,10 @@ package uk.gergely.kiss.training.tutorials.tree;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import uk.gergely.kiss.training.tutorials.tree.model.NodeEntity;
+import uk.gergely.kiss.training.tutorials.tree.repository.NodeEntityRepository;
 import uk.gergely.kiss.training.tutorials.tree.vo.BinaryTree;
 import uk.gergely.kiss.training.tutorials.tree.vo.Node;
 
@@ -11,6 +14,12 @@ import java.util.List;
 @Component
 public class BinaryTreeServiceTestBean {
     private static final Logger LOGGER = LoggerFactory.getLogger(BinaryTree.class);
+    private final NodeEntityRepository nodeEntityRepository;
+
+    @Autowired
+    public BinaryTreeServiceTestBean(NodeEntityRepository nodeEntityRepository) {
+        this.nodeEntityRepository = nodeEntityRepository;
+    }
 
     public void test() {
 
@@ -49,6 +58,14 @@ public class BinaryTreeServiceTestBean {
         for(Node node : postOrderTraversedNodeList){
             LOGGER.warn("postOrderTraversedNodeList {}",node);
         }
+
+        for(Node node : postOrderTraversedNodeList){
+            NodeEntity nodeEntity = new NodeEntity();
+            nodeEntity.setKey(node.getKey());
+
+            nodeEntityRepository.save(nodeEntity);
+        }
+
 
     }
 }

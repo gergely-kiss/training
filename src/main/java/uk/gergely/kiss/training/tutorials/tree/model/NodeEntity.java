@@ -16,7 +16,7 @@ public class NodeEntity {
     private Long treeId;
 
     @Column(name = JpaConstants.KEY, nullable = false)
-    private Integer key;
+    private Long key;
 
     @Column(name = JpaConstants.VALUE, nullable = false)
     private String value;
@@ -46,11 +46,11 @@ public class NodeEntity {
         this.treeId = treeId;
     }
 
-    public Integer getKey() {
+    public Long getKey() {
         return key;
     }
 
-    public void setKey(Integer key) {
+    public void setKey(Long key) {
         this.key = key;
     }
 
